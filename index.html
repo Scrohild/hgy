@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			body{
+				background-color: #1b1b1b;
+			}
+			#main{
+				width: 1000px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			#title{
+				width: 758px;
+				height: 250px;
+				margin-left: auto;
+				margin-right: auto;
+				color: #ffff00;
+				text-align: center;
+				line-height: 250px;
+				font-weight: bold;
+				font-family: cursive;
+				font-size: 100px;
+			}
+			#img{
+				width: 758px;
+				height: 569px;
+				margin-left: 121px;
+				background-image: url("hgy.jpg");
+				background-size: 758px 569px;
+				float: left;
+			}
+			.danmaku{
+				width: 2800px;
+				height: 40px;
+				margin-left: -1000px;
+				text-align: right;
+				font-size: 40px;
+				// text-overflow: clip;
+				float: left;
+			}
+			#t_0, #t_5{
+				margin-top: -500px;
+				color: #00aaff;
+			}
+			#t_1, #t_6{
+				margin-top: -400px;
+				color: #aaff00;
+			}
+			#t_2, #t_7{
+				margin-top: -300px;
+				color: #ff00aa;
+			}
+			#t_3, #t_8{
+				margin-top: -200px;
+				color: #20ff20;
+			}
+			#t_4, #t_9{
+				margin-top: -100px;
+				color: #ff4020;
+			}
+		</style>
+		<script>
+			var text = ["数学天王 物理特马", "数学天王", "物理特马", "大2比", "语文次", "物理特次", "英语奇次"];
+			
+			function load() {
+				for(let i = 0; i < 9; i ++) {
+					let k = Math.trunc(7 * Math.random());
+					document.getElementsByClassName("danmaku")[i].innerHTML = text[k];;
+				}
+			}
+			function dan(i) {
+				setInterval("danmaku(" + i + ")", 30);
+			}
+			function danmaku(i) {
+				let j = document.getElementsByClassName("danmaku")[i].innerHTML;
+				j += "&nbsp;"
+				document.getElementsByClassName("danmaku")[i].innerHTML = j;
+				
+				if(j.length > 1500){
+					let k = Math.trunc(7 * Math.random());
+					j = text[k];
+					document.getElementsByClassName("danmaku")[i].innerHTML = j;
+					
+					document.getElementsByClassName("danmaku")[i].style.color = color();
+				}
+			}
+			function color() {
+				let r = Math.trunc(255 * Math.random());
+				let g = Math.trunc(255 * Math.random());
+				let b = Math.trunc(255 * Math.random());
+				
+				return "rgb(" + r + ", " + g + "," + b + ")";
+			}
+		</script>
+		<title>恭迎天王登基！</title>
+	</head>
+	<body>
+		<div id="main">
+			<div id="title">
+				恭迎天王登基！
+			</div>
+			<div id="img">&nbsp;</div>
+			<div class="danmaku" id="t_0">数学天王 物理特马</div>
+			<div class="danmaku" id="t_1">数学天王 物理特马</div>
+			<div class="danmaku" id="t_2">数学天王 物理特马</div>
+			<div class="danmaku" id="t_3">数学天王 物理特马</div>
+			<div class="danmaku" id="t_4">数学天王 物理特马</div>
+			<div class="danmaku" id="t_5">数学天王 物理特马</div>
+			<div class="danmaku" id="t_6">数学天王 物理特马</div>
+			<div class="danmaku" id="t_7">数学天王 物理特马</div>
+			<div class="danmaku" id="t_8">数学天王 物理特马</div>
+		</div>
+		
+		<script>
+			load();
+			
+			dan(0);
+			setTimeout("dan(1)", 1500);
+			setTimeout("dan(2)", 3500);
+			setTimeout("dan(3)", 4000);
+			setTimeout("dan(4)", 6000);
+			setTimeout("dan(5)", 7000);
+			setTimeout("dan(6)", 8000);
+			setTimeout("dan(7)", 9500);
+			setTimeout("dan(8)", 10000);
+		</script>
+	</body>
+</html>
