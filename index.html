@@ -66,11 +66,14 @@
 			var text = ["数学天王 物理特马", "数学天王", "物理特马", "大2比",
 				"语文次", "物理特次", "英语奇次",
 				"我从未向神明祈祷", "因为我知道", "回应我的只有我自己",
-				"高考完到现在两周没拿笔了", "就是到现在马上就要不会写字了"];
+				"高考完到现在两周没拿笔了", "就是到现在马上就要不会写字了",
+				"<img src='yjp.png' width='100px' height='100px'/>",
+				"<img src='zbh.jpg' width='100px' height='100px'/>"];
+			var l = text.length;
 			
 			function load() {
 				for(let i = 0; i < 9; i ++) {
-					let k = Math.trunc(12 * Math.random());
+					let k = Math.trunc(l * Math.random());
 					document.getElementsByClassName("danmaku")[i].innerHTML = text[k];;
 				}
 			}
@@ -83,7 +86,7 @@
 				document.getElementsByClassName("danmaku")[i].innerHTML = j;
 				
 				if(j.length > 1500){
-					let k = Math.trunc(12 * Math.random());
+					let k = Math.trunc(l * Math.random());
 					j = text[k];
 					document.getElementsByClassName("danmaku")[i].innerHTML = j;
 					
