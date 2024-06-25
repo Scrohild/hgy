@@ -33,9 +33,9 @@
 				float: left;
 			}
 			.danmaku{
-				width: 2800px;
+				width: 3800px;
 				height: 40px;
-				margin-left: -1000px;
+				margin-left: -1500px;
 				text-align: right;
 				font-size: 40px;
 				// text-overflow: clip;
@@ -63,16 +63,19 @@
 			}
 		</style>
 		<script>
-			var text = ["数学天王 物理特马", "数学天王", "物理特马", "大2比", "语文次", "物理特次", "英语奇次"];
+			var text = ["数学天王 物理特马", "数学天王", "物理特马", "大2比",
+				"语文次", "物理特次", "英语奇次",
+				"我从未向神明祈祷", "因为我知道", "回应我的只有我自己",
+				"高考完到现在两周没拿笔了", "就是到现在马上就要不会写字了"];
 			
 			function load() {
 				for(let i = 0; i < 9; i ++) {
-					let k = Math.trunc(7 * Math.random());
+					let k = Math.trunc(12 * Math.random());
 					document.getElementsByClassName("danmaku")[i].innerHTML = text[k];;
 				}
 			}
 			function dan(i) {
-				setInterval("danmaku(" + i + ")", 30);
+				setInterval("danmaku(" + i + ")", 20);
 			}
 			function danmaku(i) {
 				let j = document.getElementsByClassName("danmaku")[i].innerHTML;
@@ -80,7 +83,7 @@
 				document.getElementsByClassName("danmaku")[i].innerHTML = j;
 				
 				if(j.length > 1500){
-					let k = Math.trunc(7 * Math.random());
+					let k = Math.trunc(12 * Math.random());
 					j = text[k];
 					document.getElementsByClassName("danmaku")[i].innerHTML = j;
 					
